@@ -150,6 +150,41 @@
             letter-spacing: 1px;
         }
 
+        /* Oracle Family */
+        .family-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .family-card:hover {
+            background: rgba(139, 92, 246, 0.1);
+            border-color: var(--primary);
+            transform: scale(1.02);
+        }
+
+        .family-icon {
+            font-size: 1.5rem;
+        }
+
+        .family-info h4 {
+            font-size: 1rem;
+            color: #fff;
+            margin-bottom: 2px;
+        }
+
+        .family-info p {
+            font-size: 0.7rem;
+            color: #9ca3af;
+        }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -381,6 +416,61 @@
                         <p>A modern, digital resume showcasing biography and educational background.</p>
                     </div>
                     <div style="text-align: right; font-size: 1.2rem;">🎓</div>
+                </a>
+
+            </div>
+        </section>
+
+        <section class="projects-section" style="margin-top: 0;">
+            <h2 class="section-title">Oracle Family</h2>
+            <div class="projects-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+
+                <a href="https://tworivers.buildwithoracle.com" class="family-card" target="_blank">
+                    <div class="family-icon">🏞️</div>
+                    <div class="family-info">
+                        <h4>Two Rivers</h4>
+                        <p>tworivers.buildwithoracle.com</p>
+                    </div>
+                </a>
+
+                <a href="https://arthur.buildwithoracle.com" class="family-card" target="_blank">
+                    <div class="family-icon">👑</div>
+                    <div class="family-info">
+                        <h4>Arthur</h4>
+                        <p>arthur.buildwithoracle.com</p>
+                    </div>
+                </a>
+
+                <a href="https://phukhao.buildwithoracle.com" class="family-card" target="_blank">
+                    <div class="family-icon">🏔️</div>
+                    <div class="family-info">
+                        <h4>Phukhao</h4>
+                        <p>phukhao.buildwithoracle.com</p>
+                    </div>
+                </a>
+
+                <a href="https://thongpraditxcatlab.buildwithoracle.com" class="family-card" target="_blank">
+                    <div class="family-icon">🍺</div>
+                    <div class="family-info">
+                        <h4>Thong Pradit</h4>
+                        <p>thongpraditxcatlab.buildwithoracle.com</p>
+                    </div>
+                </a>
+
+                <a href="https://maeoncraft.buildwithoracle.com" class="family-card" target="_blank">
+                    <div class="family-icon">🌿</div>
+                    <div class="family-info">
+                        <h4>Maeon Craft</h4>
+                        <p>maeoncraft.buildwithoracle.com</p>
+                    </div>
+                </a>
+
+                <a href="https://gallery.buildwithoracle.com" class="family-card" target="_blank">
+                    <div class="family-icon">🎨</div>
+                    <div class="family-info">
+                        <h4>Oracle Gallery</h4>
+                        <p>gallery.buildwithoracle.com</p>
+                    </div>
                 </a>
 
             </div>
