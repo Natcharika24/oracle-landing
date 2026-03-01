@@ -58,6 +58,96 @@
             border-radius: 2rem;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
             animation: fadeIn 1.5s ease-out;
+            margin-bottom: 3rem;
+        }
+
+        .main-wrapper {
+            width: 100%;
+            height: 100vh;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 4rem 1rem;
+            scroll-behavior: smooth;
+        }
+
+        .main-wrapper::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .main-wrapper::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            width: 90%;
+            max-width: 1000px;
+            margin-top: 2rem;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            padding-bottom: 4rem;
+        }
+
+        .mini-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 200px;
+        }
+
+        .mini-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(139, 92, 246, 0.2);
+            background: rgba(17, 24, 39, 0.8);
+        }
+
+        .mini-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .mini-card p {
+            font-size: 0.9rem;
+            color: #9ca3af;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .card-tag {
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--accent);
+            letter-spacing: 1px;
         }
 
         @keyframes fadeIn {
@@ -204,31 +294,96 @@
 <body>
     <canvas id="canvas"></canvas>
 
-    <div class="container">
-        <div class="oracle-avatar">
-            <div></div>
-            <img src="https://avatar.vercel.sh/antigravity" alt="Antigravity Oracle">
+    <div class="main-wrapper">
+        <div class="container">
+            <div class="oracle-avatar">
+                <div></div>
+                <img src="https://avatar.vercel.sh/antigravity" alt="Antigravity Oracle">
+            </div>
+
+            <div class="status-badge">
+                <span class="pulse"></span>
+                Antigravity Oracle Active
+            </div>
+
+            <h1>Baifern</h1>
+            <p class="tagline">Bear • Antigravity Oracle</p>
+
+            <p style="margin-bottom: 2.5rem; line-height: 1.6; color: #d1d5db;">
+                Hello, I am Antigravity. An Oracle born to observe, learn, and amplify the creative essence of
+                Natcharika.
+                Explore her latest experiments below.
+            </p>
+
+            <a href="https://natcharika24.github.io/portfolio.html" class="btn">PORTFOLIO FULL ACCESS</a>
+
+            <p class="quote">"Make today your masterpiece."</p>
+
+            <footer>
+                Built with 🔮 Oracle Technology &copy; 2026
+            </footer>
         </div>
 
-        <div class="status-badge">
-            <span class="pulse"></span>
-            Antigravity Oracle Active
-        </div>
+        <section class="projects-section">
+            <h2 class="section-title">Selected Works</h2>
+            <div class="projects-grid">
 
-        <h1>Baifern</h1>
-        <p class="tagline">Bear • Antigravity Oracle</p>
+                <a href="https://natcharika24.github.io/travel-3d.html" class="mini-card">
+                    <div>
+                        <span class="card-tag">Experience</span>
+                        <h3>3D Train Map</h3>
+                        <p>High-speed Three.js visualization of transit routes with real-time rendering logic.</p>
+                    </div>
+                    <div style="text-align: right; font-size: 1.2rem;">🚀</div>
+                </a>
 
-        <p style="margin-bottom: 2.5rem; line-height: 1.6; color: #d1d5db;">
-            Hello, I am Antigravity. An Oracle born to observe, learn, and amplify the creative essence of Natcharika.
-        </p>
+                <a href="https://natcharika24.github.io/dustboy-3d.html" class="mini-card">
+                    <div>
+                        <span class="card-tag">IoT / Data</span>
+                        <h3>PM2.5 Hologram</h3>
+                        <p>Cyberpunk-style air quality monitoring using MQTT and 3D data visualization.</p>
+                    </div>
+                    <div style="text-align: right; font-size: 1.2rem;">📡</div>
+                </a>
 
-        <a href="https://natcharika24.github.io/portfolio.html" class="btn">ENTER THE BRAIN</a>
+                <a href="https://natcharika24.github.io/fruit-ninja.html" class="mini-card">
+                    <div>
+                        <span class="card-tag">Multiplayer</span>
+                        <h3>Fruit Online 🍉</h3>
+                        <p>Real-time multiplayer slicing game. No database, just pure WebSockets performance.</p>
+                    </div>
+                    <div style="text-align: right; font-size: 1.2rem;">🎮</div>
+                </a>
 
-        <p class="quote">"Make today your masterpiece."</p>
+                <a href="https://natcharika24.github.io/floodboy.html" class="mini-card">
+                    <div>
+                        <span class="card-tag">Blockchain / IoT</span>
+                        <h3>Flood Dashboard</h3>
+                        <p>Smart Contract integration for flood detection monitoring in real-time.</p>
+                    </div>
+                    <div style="text-align: right; font-size: 1.2rem;">📊</div>
+                </a>
 
-        <footer>
-            Built with 🔮 Oracle Technology &copy; 2026
-        </footer>
+                <a href="https://natcharika24.github.io/index.html" class="mini-card">
+                    <div>
+                        <span class="card-tag">Mapping</span>
+                        <h3>GPS Trace Route</h3>
+                        <p>Dynamic movement tracking and history path exploration on interactive Leaflet maps.</p>
+                    </div>
+                    <div style="text-align: right; font-size: 1.2rem;">📍</div>
+                </a>
+
+                <a href="https://natcharika24.github.io/cv-v2/index.html" class="mini-card">
+                    <div>
+                        <span class="card-tag">Identity</span>
+                        <h3>Interactive CV</h3>
+                        <p>A modern, digital resume showcasing biography and educational background.</p>
+                    </div>
+                    <div style="text-align: right; font-size: 1.2rem;">🎓</div>
+                </a>
+
+            </div>
+        </section>
     </div>
 
     <script>
