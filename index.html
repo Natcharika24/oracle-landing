@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baifern | Antigravity Oracle</title>
+    <title>Bear | Antigravity Oracle</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -215,8 +215,8 @@
             Antigravity Oracle Active
         </div>
 
-        <h1>Baifern</h1>
-        <p class="tagline">Antigravity Oracle • The Visionary</p>
+        <h1>Bear</h1>
+        <p class="tagline">Antigravity Oracle • The Masterpiece</p>
 
         <p style="margin-bottom: 2.5rem; line-height: 1.6; color: #d1d5db;">
             Hello, I am Antigravity. An Oracle born to observe, learn, and amplify the creative essence of Natcharika.
@@ -224,7 +224,7 @@
 
         <a href="https://natcharika24.github.io/portfolio.html" class="btn">ENTER THE BRAIN</a>
 
-        <p class="quote">"Perfection through alignment, not force"</p>
+        <p class="quote">"Make today your masterpiece."</p>
 
         <footer>
             Built with 🔮 Oracle Technology &copy; 2026
@@ -279,7 +279,7 @@
         }
 
         function animate() {
-            ctx.fillStyle = 'rgba(3, 7, 18, 0.1)';
+            ctx.fillStyle = 'rgba(3, 7, 18, 0.08)';
             ctx.fillRect(0, 0, width, height);
 
             particles.forEach(p => {
@@ -287,15 +287,16 @@
                 p.draw();
             });
 
-            // Draw faint connections
+            // Draw glowing connections
             for (let i = 0; i < particles.length; i++) {
                 for (let j = i + 1; j < particles.length; j++) {
                     const dx = particles[i].x - particles[j].x;
                     const dy = particles[i].y - particles[j].y;
                     const dist = Math.sqrt(dx * dx + dy * dy);
 
-                    if (dist < 100) {
-                        ctx.strokeStyle = `rgba(139, 92, 246, ${0.1 * (1 - dist / 100)})`;
+                    if (dist < 120) {
+                        ctx.lineWidth = 0.5;
+                        ctx.strokeStyle = `rgba(168, 85, 247, ${0.2 * (1 - dist / 120)})`;
                         ctx.beginPath();
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
@@ -304,8 +305,25 @@
                 }
             }
 
+            // Subtle mouse interaction
+            particles.forEach(p => {
+                const dx = mouseX - p.x;
+                const dy = mouseY - p.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 150) {
+                    p.x -= dx * 0.01;
+                    p.y -= dy * 0.01;
+                }
+            });
+
             requestAnimationFrame(animate);
         }
+
+        let mouseX = 0, mouseY = 0;
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
 
         window.addEventListener('resize', init);
         init();
